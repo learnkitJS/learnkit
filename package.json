@@ -1,6 +1,5 @@
 {
   "name": "scikit-root",
-  "version": "1.0.0",
   "author": "John Zhang <iamjz210@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -18,6 +17,7 @@
     "pub": "./scripts/pub.sh"
   },
   "devDependencies": {
+    "globs": "^0.1.4",
     "lerna": "^3.22.1"
   }
 }

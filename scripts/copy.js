@@ -4,7 +4,7 @@ var fsx = require('fs-extra');
 var _path = require('path');
 var glob = require('globs');
 
-var publishPkgs = ['maths', 'scikit', 'types', 'utils'];
+var publishPkgs = ['maths', 'learnkit', 'types', 'utils'];
 
 var protectedPkgs = [];
 

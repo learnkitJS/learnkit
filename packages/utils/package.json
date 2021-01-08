@@ -1,10 +1,18 @@
 {
-  "name": "@scikit/utils",
-  "version": "1.0.0",
+  "name": "@learnkit/utils",
+  "version": "0.0.1",
   "author": "John Zhang <iamjz210@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/learnkitJS/learnkit.git",
+    "directory": "packages/utils"
+  },
   "directories": {
     "lib": "lib"
   },
@@ -12,7 +20,7 @@
     "lib"
   ],
   "dependencies": {
-    "@scikit/types": "1.0.0",
+    "@learnkit/types": "0.0.1",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
