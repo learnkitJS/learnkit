@@ -1,0 +1,23 @@
+{
+  "name": "scikit-root",
+  "version": "1.0.0",
+  "author": "John Zhang <iamjz210@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap && lerna link",
+    "build": "lerna run --stream build",
+    "watch": "lerna run --stream --parallel watch",
+    "lint": "lerna run --stream --parallel lint",
+    "test": "lerna run --stream test",
+    "clean": "./scripts/clean.sh",
+    "update:version": "lerna publish --force-publish=* --skip-npm --no-push --exact --no-git-tag-version",
+    "pub": "./scripts/pub.sh"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

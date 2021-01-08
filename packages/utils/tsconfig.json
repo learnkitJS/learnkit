@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "es2015", "es2015.promise", "es2017.object"],
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib",
+    "declaration": true,
+    "allowJs": true,
+    "types": ["jest", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["packages/scikit/src/*"]
+    }
+  },
+  "exclude": ["gulpfile.js", "node_modules", "lib"]
+}
