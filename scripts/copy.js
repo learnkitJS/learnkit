@@ -25,7 +25,7 @@ function copyPackage(src, dest, canInclude) {
 }
 
 var rootDir = process.cwd();
-var outputDir = _path.resolve(rootDir, 'dist', 'sabre');
+var outputDir = _path.resolve(rootDir, 'dist');
 var protectedPkgMap = protectedPkgs.reduce((acc, curr) => {
     acc[curr] = true;
     return acc;

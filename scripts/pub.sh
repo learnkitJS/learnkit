@@ -18,7 +18,7 @@ changeWorkDIR() {
 }
 
 publishAll() {
-    cd dist/sabre
+    cd dist
     for file in `ls ./packages`
     do
         if [ -d "./packages/"$file ]
@@ -43,11 +43,42 @@ publish() {
     if [[ $exist == 0 ]]
     then
         cd $1
-        npm publish 2> $errorLogFile
+        npm publish --access public 2> $errorLogFile
         cd ../..
     else
         echo VERSION $version EXISTED
     fi
+}
+
+checkVersion() {
+    onlineVersion=$(npm view $1 versions)
+    echo $1 $2
+    if [[ $onlineVersion =~ "'"$2"'" ]]
+    then
+        return 1
+    else
+        return 0
+    fi
+}
+
+getPackageInfo() {
+    reVersion="\"(version)\": \"([^\"]*)\""
+    reName="\"(name)\": \"([^\"]*)\""
+
+    while read -r l
+    do
+        if [[ $l =~ $reVersion ]]
+        then
+            value="${BASH_REMATCH[2]}"
+            version="$value"
+        fi
+
+        if [[ $l =~ $reName ]]
+        then
+            value="${BASH_REMATCH[2]}"
+            name="$value"
+        fi
+    done < $1
 }
 
 runCommand() {
@@ -58,7 +89,7 @@ runCommand() {
     case $1 in
         (CLEAR)
             changeWorkDIR $ROOTDIR
-            rm -rf $ROOTDIR/dist/sabre
+            rm -rf $ROOTDIR/dist
             yarn run clean 2> $errorLogFile
             ;;
         (BUILD)
@@ -96,6 +127,7 @@ command=$1
 runCommand CLEAR
 runCommand BUILD
 runCommand COPY
+runCommand PUBLISH
 rm -rf $errorLogFile
 
 echo ------------ DONE ------------

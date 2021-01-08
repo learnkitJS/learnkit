@@ -1,6 +1,6 @@
 {
   "name": "learnkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "John Zhang <iamjz210@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
@@ -20,9 +20,9 @@
     "lib"
   ],
   "dependencies": {
-    "@learnkit/maths": "0.0.1",
-    "@learnkit/types": "0.0.1",
-    "@learnkit/utils": "0.0.1",
+    "@learnkit/maths": "0.0.2",
+    "@learnkit/types": "0.0.2",
+    "@learnkit/utils": "0.0.2",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
